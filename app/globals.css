@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
+@theme {
+  /* 🌟 ลงทะเบียนชุดสีให้ Tailwind v4 รู้จัก เพื่อให้สามารถใช้คลาสพวก bg-background หรือ text-primary ได้ */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* โทนสีครีมอุ่น ถนอมสายตา (Warm Cream) */
+  --background: 40 40% 97%; 
+  --foreground: 20 20% 18%;
+
+  /* โทนสีม่วงพาสเทลละมุนใจ (Soft Purple) */
+  --primary: 265 55% 65%;
+  --primary-foreground: 0 0% 100%;
+
+  --card: 40 30% 99%;
+  --card-foreground: 20 20% 18%;
+  
+  --secondary: 35 30% 92%;
+  --secondary-foreground: 20 20% 18%;
+  
+  --muted: 35 20% 90%;
+  --muted-foreground: 20 10% 40%;
+  
+  --accent: 265 55% 95%;
+  --accent-foreground: 265 55% 40%;
+  
+  --border: 35 20% 88%;
+  --input: 35 20% 88%;
+  --ring: 265 55% 65%;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* 🌟 เปลี่ยนมาใช้การกำหนดสไตล์พื้นหลังด้วยตัวแปร CSS ปกติ เพื่อป้องกันไม่ให้ Tailwind บั๊กตอนแปลงคำสั่ง */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: system-ui, -apple-system, sans-serif;
 }
