@@ -88,7 +88,7 @@ export default function QuizPage() {
       
       {/* 🚨 1. Top Urgent Bar */}
       <div className="bg-rose-500/5 border-b border-rose-100/60 py-2.5 px-4 text-center text-xs font-semibold text-rose-700 flex flex-wrap justify-center items-center gap-x-3 gap-y-1">
-        <span>🚨 ต้องการความช่วยเหลือเร่งด่วน? โทรหาผู้เชี่ยวชาญได้เลย - ฟรี ตลอด 24 ชั่วโมง</span>
+        <span>ต้องการความช่วยเหลือเร่งด่วน? โทรหาผู้เชี่ยวชาญได้เลย - ฟรี ตลอด 24 ชั่วโมง</span>
         <div className="flex gap-2 font-bold text-[10px] sm:text-xs">
           <span className="bg-rose-500/10 px-2 py-0.5 rounded-full">1323 สุขภาพจิต</span>
           <span className="bg-rose-500/10 px-2 py-0.5 rounded-full">1669 ฉุกเฉิน</span>
@@ -101,7 +101,7 @@ export default function QuizPage() {
         <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
           
           <a href="/" className="text-base font-black tracking-tight flex items-center gap-1.5 hover:opacity-85 transition-opacity">
-            <span className="text-lg">🏡</span>
+            <span className="text-lg"></span>
             <span className="text-foreground">บ้านพักใจ</span>
           </a>
 

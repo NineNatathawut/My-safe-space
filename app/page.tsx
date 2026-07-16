@@ -14,7 +14,7 @@ export default function HomePage() {
   const whyUs = [
     {
       title: "ออนไลน์ตลอด 24 ชม.",
-      desc: "เราออกแบบมาเพื่อให้คุณรู้สึกปลอดภัย อบอุ่น และได้รับการสนับสนุน ทุกคำที่คุณพิมพ์มีค่า",
+      desc: "ต่อให้คนทั้งโลกหันหลังให้กับคุณ ไม่น่าผิดหวังเท่ากับคุณหันหลังให้ตัวเอง",
       icon: Smile,
       color: "bg-amber-500/10 text-amber-600 border-amber-100/50"
     },
@@ -26,7 +26,7 @@ export default function HomePage() {
     },
     {
       title: "ไม่ตัดสิน ไม่วิจารณ์",
-      desc: "ทุกความรู้สึกมีสิทธิ์อยู่ที่นี่ โกรธ เศร้า กลัว หรือแม้แต่ไม่รู้สึกอะไร - ก็ระบายได้",
+      desc: "ทุกความรู้สึกมีสิทธิ์อยู่ที่นี่ โกรธ เศร้า กลัว หรือแม้แต่ไม่รู้สึกอะไร ก็ระบายได้",
       icon: Heart,
       color: "bg-rose-500/10 text-rose-600 border-rose-100/50"
     }
@@ -36,7 +36,7 @@ export default function HomePage() {
   const resourceCategories = [
     {
       title: "เบอร์โทรฉุกเฉินพร้อมใช้",
-      desc: "สายด่วนสุขภาพจิต 1323 และหน่วยงานสนับสนุนอื่น ๆ - เข้าถึงได้ทุกหน้าเมื่อใจอ่อนล้า",
+      desc: "สายด่วนสุขภาพจิต 1323 และหน่วยงานสนับสนุนอื่น ๆ เข้าถึงได้ทุกหน้าเมื่อใจอ่อนล้า",
       icon: Phone,
       bgColor: "bg-emerald-500/5 text-emerald-600 border-emerald-100/30"
     },
@@ -69,7 +69,7 @@ export default function HomePage() {
       
       {/* 🚨 1. Top Urgent Bar (แถบด่วนบนสุดของหน้าเว็บจากไฟล์ PDF) */}
       <div className="bg-rose-500/5 border-b border-rose-100/60 py-2.5 px-4 text-center text-xs font-semibold text-rose-700 flex flex-wrap justify-center items-center gap-x-3 gap-y-1">
-        <span>🚨 ต้องการความช่วยเหลือเร่งด่วน? โทรหาผู้เชี่ยวชาญได้เลย - ฟรี ตลอด 24 ชั่วโมง</span>
+        <span>ต้องการความช่วยเหลือเร่งด่วน? โทรหาผู้เชี่ยวชาญได้เลย - ฟรี ตลอด 24 ชั่วโมง</span>
         <div className="flex gap-2 font-bold text-[10px] sm:text-xs">
           <span className="bg-rose-500/10 px-2 py-0.5 rounded-full">1323 สุขภาพจิต</span>
           <span className="bg-rose-500/10 px-2 py-0.5 rounded-full">1669 ฉุกเฉิน</span>
@@ -83,7 +83,7 @@ export default function HomePage() {
           
           {/* โลโก้แบรนด์ */}
           <a href="/" className="text-base font-black tracking-tight flex items-center gap-1.5 hover:opacity-85 transition-opacity">
-            <span className="text-lg">🏡</span>
+            
             <span className="text-foreground">บ้านพักใจ</span>
           </a>
 
@@ -124,7 +124,7 @@ export default function HomePage() {
                 <a href="/resources" onClick={() => setIsMobileMenuOpen(false)} className="hover:bg-accent p-3 rounded-xl flex items-center justify-between text-muted-foreground hover:text-foreground">ทรัพยากร <ChevronRight className="w-4 h-4" /></a>
                 <a href="/quiz" onClick={() => setIsMobileMenuOpen(false)} className="hover:bg-accent p-3 rounded-xl flex items-center justify-between text-muted-foreground hover:text-foreground">แบบประเมินความเครียด <ChevronRight className="w-4 h-4" /></a>
                 <a href="#helpline" onClick={() => setIsMobileMenuOpen(false)} className="bg-primary text-primary-foreground text-center py-3 rounded-xl shadow-xs block mt-2 font-black">
-                  ติดต่อขอความช่วยเหลือ 📞
+                  ติดต่อขอความช่วยเหลือ 
                 </a>
               </div>
             </motion.div>
@@ -153,7 +153,7 @@ export default function HomePage() {
               </h1>
               
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-lg">
-                ระบายความรู้สึก แบ่งปันความเจ็บปวด หรือแค่อยากพิมพ์บอกใครสักคน - เราพร้อมรับฟังทุกคำ โดยไม่ตัดสิน ไม่มีการระบุตัวตน
+                พื้นที่เล็ก ๆ สำหรับทุกความรู้สึก พิมพ์สิ่งที่อยู่ในใจของคุณ เราพร้อมรับฟังด้วยความเข้าใจ โดยไม่ตัดสิน และไม่ต้องเปิดเผยตัวตน 
               </p>
 
               <div className="flex flex-wrap gap-3 pt-2 text-sm font-semibold">
@@ -166,7 +166,7 @@ export default function HomePage() {
               </div>
 
               <p className="text-xs text-muted-foreground/80 font-medium flex items-center gap-1">
-                <Sparkles className="w-3.5 h-3.5 text-amber-500 fill-current" /> ไม่มีการบันทึกชื่อ - ไม่มีการล็อกอิน ปลอดภัย 100%
+                <Sparkles className="w-3.5 h-3.5 text-amber-500 fill-current" /> .
               </p>
             </div>
 
@@ -183,7 +183,7 @@ export default function HomePage() {
                 <p className="text-xs font-black text-primary tracking-widest uppercase mb-1.5">พื้นที่ปลอดภัย</p>
                 <p className="text-xs text-muted-foreground font-medium text-center px-4 leading-relaxed">ไม่ตัดสิน ไม่วิจารณ์ ไม่ระบุตัวตนของคุณ</p>
                 <a href="/vent" className="mt-6 text-xs font-bold bg-background hover:bg-primary hover:text-primary-foreground border border-border text-foreground px-5 py-2.5 rounded-full shadow-xs transition-all">
-                  เริ่มระบายเลย ✨
+                  เริ่มระบายเลย 
                 </a>
               </motion.div>
             </div>
@@ -195,7 +195,7 @@ export default function HomePage() {
               <h2 className="text-2xl font-black text-foreground">ทำไมต้องบ้านพักใจ?</h2>
               <p className="text-xs sm:text-sm font-bold text-primary uppercase tracking-wider">พื้นที่ที่คุณระบายได้อย่างอิสระ</p>
               <p className="text-xs sm:text-sm text-muted-foreground">
-                เราออกแบบมาเพื่อให้คุณรู้สึกปลอดภัย อบอุ่น และได้รับการสนับสนุน ทุกคำที่คุณพิมพ์มีค่า
+                เราออกแบบมาเพื่อให้คุณรู้สึกปลอดภัย อบอุ่น และได้รับการสนับสนุน ทุกคำที่คุณพิมพ์มีค่า 
               </p>
             </div>
 
@@ -297,33 +297,9 @@ export default function HomePage() {
               พื้นที่ปลอดภัยสำหรับทุกคน ไม่ระบุตัวตน ไม่ตัดสิน พร้อมสนับสนุนสุขภาพจิตที่ดีของคุณในทุกๆ วัน
             </p>
           </div>
-          <div className="space-y-3">
-            <h5 className="font-bold text-foreground uppercase tracking-wider text-[11px]">เมนู</h5>
-            <ul className="space-y-2 text-[11px]">
-              <li><a href="/" className="hover:text-primary transition-colors">หน้าแรก</a></li>
-              <li><a href="/vent" className="hover:text-primary transition-colors">ระบายความรู้สึก</a></li>
-              <li><a href="/resources" className="hover:text-primary transition-colors">ทรัพยากรสุขภาพจิต</a></li>
-              <li><span className="text-muted-foreground/40 cursor-not-allowed">เกี่ยวกับเรา</span></li>
-            </ul>
-          </div>
-          <div className="space-y-3">
-            <h5 className="font-bold text-foreground uppercase tracking-wider text-[11px]">ช่วยเหลือฉุกเฉิน</h5>
-            <ul className="space-y-2 text-[11px]">
-              <li>📞 1323 (สุขภาพจิต)</li>
-              <li>📞 1669 (ฉุกเฉินแพทย์)</li>
-              <li>📞 02-713-6793 (ราชานุกูล)</li>
-              <li>📞 1422 (สายด่วนสาธารณสุข)</li>
-            </ul>
-          </div>
-          <div className="space-y-3">
-            <h5 className="font-bold text-foreground uppercase tracking-wider text-[11px]">ทรัพยากรเพิ่มเติม</h5>
-            <ul className="space-y-2 text-[11px]">
-              <li><span className="text-muted-foreground/80">กรมสุขภาพจิต</span></li>
-              <li><span className="text-muted-foreground/80">โรงพยาบาลราชานุกูล</span></li>
-              <li><span className="text-muted-foreground/80">สถาบันจิตเวชศาสตร์สมเด็จฯ</span></li>
-              <li><a href="/quiz" className="hover:text-primary text-primary font-bold underline">แบบประเมินความเครียด</a></li>
-            </ul>
-          </div>
+         
+          
+          
         </div>
         <div className="border-t border-border py-6 text-center text-[10px] space-y-1.5 max-w-4xl mx-auto px-4">
           <p className="font-semibold text-foreground/70 flex items-center justify-center gap-1">

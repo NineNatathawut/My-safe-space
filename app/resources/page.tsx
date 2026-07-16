@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { 
   Phone, BookOpen, Menu, X, ShieldCheck, 
-  Wind, Play, Square, Heart
+  Wind, Play, Square, Heart, ChevronRight
 } from "lucide-react";
 
 interface Article {
@@ -171,26 +171,70 @@ export default function ResourcesPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col antialiased">
+
+            {/* 🚨 1. Top Urgent Bar (แถบด่วนบนสุดของหน้าเว็บจากไฟล์ PDF) */}
+      <div className="bg-rose-500/5 border-b border-rose-100/60 py-2.5 px-4 text-center text-xs font-semibold text-rose-700 flex flex-wrap justify-center items-center gap-x-3 gap-y-1">
+        <span>ต้องการความช่วยเหลือเร่งด่วน? โทรหาผู้เชี่ยวชาญได้เลย - ฟรี ตลอด 24 ชั่วโมง</span>
+        <div className="flex gap-2 font-bold text-[10px] sm:text-xs">
+          <span className="bg-rose-500/10 px-2 py-0.5 rounded-full">1323 สุขภาพจิต</span>
+          <span className="bg-rose-500/10 px-2 py-0.5 rounded-full">1669 ฉุกเฉิน</span>
+          <span className="bg-rose-500/10 px-2 py-0.5 rounded-full">1385 ป้องกันชีวิต</span>
+        </div>
+      </div>
       
       {/* 🏡 1. Navigation Bar */}
-      <header className="sticky top-0 z-40 bg-background/70 backdrop-blur-md border-b border-border/60">
+      <header className="sticky top-0 z-40 bg-background/70 backdrop-blur-md border-b border-border/60 transition-all">
         <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-          <a href="/" className="text-base font-black tracking-tight flex items-center gap-1.5 hover:opacity-85">
-            <span className="text-lg">🏡</span>
+          
+          {/* โลโก้แบรนด์ */}
+          <a href="/" className="text-base font-black tracking-tight flex items-center gap-1.5 hover:opacity-85 transition-opacity">
+            
             <span className="text-foreground">บ้านพักใจ</span>
           </a>
+
+          {/* เมนูสำหรับหน้าจอ Desktop (ครบตามข้อกำหนดในไฟล์ PDF) */}
           <nav className="hidden md:flex items-center gap-1 text-[13px] font-bold text-muted-foreground">
-            <a href="/" className="hover:text-primary hover:bg-accent/50 px-3 py-2 rounded-xl transition-all">หน้าแรก</a>
+            <a href="/" className="text-primary px-3 py-2 rounded-xl bg-primary/5 transition-colors">หน้าแรก</a>
             <a href="/vent" className="hover:text-primary hover:bg-accent/50 px-3 py-2 rounded-xl transition-all">ระบายความรู้สึก</a>
-            <a href="/resources" className="text-primary px-3 py-2 rounded-xl bg-primary/5 transition-colors">ทรัพยากร</a>
+            <a href="/resources" className="hover:text-primary hover:bg-accent/50 px-3 py-2 rounded-xl transition-all">ทรัพยากร</a>
             <a href="/quiz" className="hover:text-primary hover:bg-accent/50 px-3 py-2 rounded-xl transition-all flex items-center gap-1">
               แบบประเมิน <span className="text-[10px] bg-amber-500/10 text-amber-600 px-1.5 py-0.5 rounded-md font-normal">ใหม่</span>
             </a>
+            <a href="#helpline" className="ml-2 bg-primary text-primary-foreground px-4 py-2 rounded-full shadow-xs hover:bg-primary/90 hover:scale-102 transition-all text-xs font-black">
+              ติดต่อขอความช่วยเหลือ
+            </a>
           </nav>
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden p-2 text-muted-foreground rounded-xl">
+
+          {/* ปุ่มเปิดเมนูบน Mobile */}
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 text-muted-foreground hover:text-foreground hover:bg-accent rounded-xl transition-colors"
+          >
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
+
+        {/* เมนู Dropdown แบบสไลด์ลงมาสำหรับ Mobile */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div 
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden bg-card border-b border-border text-sm font-bold shadow-inner"
+            >
+              <div className="px-4 py-4 space-y-2 flex flex-col">
+                <a href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-primary bg-primary/5 p-3 rounded-xl flex items-center justify-between">หน้าแรก <ChevronRight className="w-4 h-4" /></a>
+                <a href="/vent" onClick={() => setIsMobileMenuOpen(false)} className="hover:bg-accent p-3 rounded-xl flex items-center justify-between text-muted-foreground hover:text-foreground">ระบายความรู้สึก <ChevronRight className="w-4 h-4" /></a>
+                <a href="/resources" onClick={() => setIsMobileMenuOpen(false)} className="hover:bg-accent p-3 rounded-xl flex items-center justify-between text-muted-foreground hover:text-foreground">ทรัพยากร <ChevronRight className="w-4 h-4" /></a>
+                <a href="/quiz" onClick={() => setIsMobileMenuOpen(false)} className="hover:bg-accent p-3 rounded-xl flex items-center justify-between text-muted-foreground hover:text-foreground">แบบประเมินความเครียด <ChevronRight className="w-4 h-4" /></a>
+                <a href="#helpline" onClick={() => setIsMobileMenuOpen(false)} className="bg-primary text-primary-foreground text-center py-3 rounded-xl shadow-xs block mt-2 font-black">
+                  ติดต่อขอความช่วยเหลือ 
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
 
       {/* 🧩 2. Main Content */}
@@ -314,7 +358,7 @@ export default function ResourcesPage() {
             {dailyTips.map((tip) => (
               <div 
                 key={tip.id}
-                className="bg-amber-50/60 dark:bg-purple-950/20 border border-purple-100/40 dark:border-purple-900/30 rounded-2xl p-6 flex flex-col items-center text-center space-y-3.5 shadow-2xs transition-all hover:scale-[1.02]"
+                className="bg-purple-50/60 dark:bg-purple-950/20 border border-purple-100/40 dark:border-purple-900/30 rounded-2xl p-6 flex flex-col items-center text-center space-y-3.5 shadow-2xs transition-all hover:scale-[1.02]"
               >
                 {/* ตัวเลขสีม่วงทรงกลมแบบ Centered Alignment */}
                 <div className="w-7 h-7 rounded-full bg-[#63559E] text-white flex items-center justify-center text-xs font-black shadow-xs">
